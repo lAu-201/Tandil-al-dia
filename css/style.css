@@ -1,0 +1,280 @@
+:root[data-theme="light"] {
+  --color-fondo: #f5f5f5;
+  --color-fondo2: #2f2f2f;
+  --texto: #000000;
+  --texto2: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --color-fondo: #2f2f2f;
+  --color-fondo2: #1b1b1b;
+  --texto: #ffffff;
+  --texto2: #ffffff;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.modooscuro, .modoclaro{
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:root[data-theme="light"] .modooscuro{
+  display: none;
+}
+
+:root[data-theme="dark"] .modoclaro{
+  display: none;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#formcambios{  
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 350px;
+  max-width: 90%;
+}
+
+header {
+  top: 0px;
+  position: sticky;
+  background-color: var(--color-fondo);
+}
+
+.cabeza{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.titulo{
+  margin-right: auto;
+}
+
+.encabezado {
+  text-align: center;
+  font-size: xx-large;
+  color: rgb(54, 125, 68);
+}
+
+a {
+  text-decoration: none;
+  color: var(--texto);
+}
+
+.navbar {
+  color: var(--texto2);
+} 
+
+form .boton {
+  background-color: rgb(54, 125, 68);
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  margin: 2px;
+  box-shadow: 1px 1px 10px black;
+}
+
+.contenedor,
+.navbar,
+.noticias,
+.anuncios,
+.pie {
+  display: flex;
+}
+
+.navbar {
+  background: rgb(54, 125, 68);
+  padding-left: 0;
+  justify-content: center;
+  font-size: large;
+  color: var(--texto2);
+}
+
+.subeconomia {
+  text-align: center;
+  color: rgb(54, 125, 68);
+}
+
+#tabla {
+  background-color: var(--color-fondo);
+  color: var(--texto);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px black;
+}
+
+#tabla td {
+  padding: 5px;
+}
+
+.agregar {
+  width: 24%;
+}
+
+header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.anuncios {
+  grid-area: anuncios;
+  size: 50%;
+  flex-direction: row;
+  margin: 1%;
+  padding: 1%;
+  min-height: 10%;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "sidebarA"
+    "main"
+    "anuncios"
+    "footer";
+  grid-template-columns: 1fr;
+}
+
+.navbar li {
+  list-style: none;
+  margin: 0 10px;
+  padding: 2%;
+}
+
+.noticias {
+  width: 80%;
+  margin: 1%;
+  font-size: large;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.anuncios img {
+  width: 50%;
+}
+
+.sidebarA{
+  grid-area: sidebarA;
+}
+
+.formulario {
+  width: 60%;
+  background-color: var(--color-fondo);
+  color: var(--texto);
+  text-align: center;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 15px;
+  box-shadow: 2px 2px 10px black;
+}
+
+.cjsdtexto {
+  width: 100%;
+}
+
+.cajacaptcha {
+  width: 100%;
+  height: 40px;
+  letter-spacing: 5px;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+
+.pie {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--color-fondo2);
+  color: var(--texto2);
+}
+
+.pie ul li {
+  list-style: none;
+  padding: 1%;
+}
+
+.fotos {
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 950px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;;
+    grid-template-areas:
+      "sidebarA  main anuncios";
+  }
+
+  .navbar li {
+    list-style: none;
+    margin: 0px 10px;
+    padding: 15px;
+  }
+
+  .noticias {
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  .anuncios {
+    grid-area: anuncios;
+    flex-direction: column;
+    margin: 1%;
+    padding: 1%;
+  }
+
+  .anuncios img{
+    width: 100%;
+  }
+
+  .cjsdtexto {
+    width: 100%;
+  }
+
+  .pie ul li {
+    list-style: none;
+    padding: 1px;
+  }
+
+  .fotos {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20%;
+  }
+}
